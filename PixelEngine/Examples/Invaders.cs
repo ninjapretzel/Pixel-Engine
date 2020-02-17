@@ -30,12 +30,35 @@ namespace PixelEngine.Examples {
 			}
 		}
 
-		class Player : Entity {
-			public Player(int seed) {
-				sprite = RenderPlayer(seed);	
+		class Shot : Entity {
+			public Vector2 speed;
+			public Shot(int seed) {
+				sprite = RenderShot(seed);
 			}
 			public override void Update(Game game, float delta) {
-				
+				position += speed;
+				if (position.x < 0 - sprite.Width) { }
+				if (position.y < 0 - sprite.Height) { }
+				if (position.x > game.ScreenWidth) { }
+				if (position.y > game.ScreenHeight) { }
+			}
+		}
+
+		class Player : Entity {
+			public Player(int seed) {
+				sprite = RenderPlayer(seed);
+			}
+			public override void Update(Game game, float delta) {
+				Vector2 movement = default;
+				if (game.GetKey(Key.A).Down || game.GetKey(Key.Left).Down) { movement.x -= 1; }
+				if (game.GetKey(Key.D).Down || game.GetKey(Key.Right).Down) { movement.x += 1; }
+				if (game.GetKey(Key.W).Down || game.GetKey(Key.Up).Down) { movement.y -= 1; }
+				if (game.GetKey(Key.S).Down || game.GetKey(Key.Down).Down) { movement.y += 1; }
+				position += movement;
+				if (position.x < 0) { position.x = 0; }
+				if (position.x > game.ScreenWidth-sprite.Width) { position.x = game.ScreenWidth - sprite.Width; }
+				if (position.y < game.ScreenHeight/2) { position.y = game.ScreenHeight/2; }
+				if (position.y > game.ScreenHeight) { position.y = game.ScreenHeight; }
 			}
 		}
 
@@ -162,6 +185,8 @@ namespace PixelEngine.Examples {
 			}
 
 			player = new Player(playerSeed);
+			player.position = new Vector2(ScreenWidth/2-7, ScreenHeight * 3 / 4);
+
 			entities.Add(player);
 		}
 
@@ -373,19 +398,19 @@ namespace PixelEngine.Examples {
 			Randoms.Seed = seed;
 			Pixel[] palette = new Pixel[4];
 			float hue,sat,val;
-			hue = Randoms.RandomFloat();
-			sat = .2f + .3f * Randoms.RandomFloat();
-			val = .2f + .3f * Randoms.RandomFloat();
+			hue = Randoms.value;
+			sat = .2f + .3f * Randoms.value;
+			val = .2f + .3f * Randoms.value;
 			Vector4 baseColor = new Vector4(hue, sat, val, 1.0f);
 			palette[1] = Pixel.HSVA(baseColor);
-			hue = -.1f + .2f * Randoms.RandomFloat();
-			sat = .3f + .2f * Randoms.RandomFloat();
-			val = .3f + .2f * Randoms.RandomFloat();
+			hue = -.1f + .2f * Randoms.value;
+			sat = .3f + .2f * Randoms.value;
+			val = .3f + .2f * Randoms.value;
 			Vector4 cockpitColor = baseColor + new Vector4(hue,sat,val,0f);
 			palette[2] = Pixel.HSVA(cockpitColor);
-			hue = -.05f + .1f * Randoms.RandomFloat();
-			sat = -.1f - .1f * Randoms.RandomFloat();
-			val = -.1f - .1f * Randoms.RandomFloat();
+			hue = -.05f + .1f * Randoms.value;
+			sat = -.1f - .1f * Randoms.value;
+			val = -.1f - .1f * Randoms.value;
 			Vector4 outlineColor = baseColor + new Vector4(hue,sat,val,0f);
 			palette[3] = Pixel.HSVA(outlineColor);
 			int spriteSize = 15;
@@ -395,14 +420,14 @@ namespace PixelEngine.Examples {
 			// Begin with outline
 			spr.SetIndex(b.x, b.y, 3);
 			// Draw Triangle
-			int cockpitSize = Randoms.RandomInt(3,5);
-			int invCockpitSize = (1+spriteSize) /2 - cockpitSize;
+			int cockpitSize = Randoms.RandomInt(4,7);
+			int invCockpitSize = (1+spriteSize) / 2 - cockpitSize;
 			for (int y = 1; y < spriteSize; y++) {
-				int maxOff = (1 + y)/2;
-				for (int i = 0; i < maxOff; i++) {
+				int maxOff = (y)/2;
+				for (int i = 0; i <= maxOff; i++) {
 					byte v = 1;
 					if ( (i < spriteSize-2) && (i-1 < maxOff-invCockpitSize)) { v = 2; }
-					if (i == maxOff - 1 || y == (spriteSize - 1)) { v = 3; }
+					if (i == maxOff || y == (spriteSize - 1)) { v = 3; }
 
 					
 					spr.SetIndex(b.x + i, b.y + y, v);
@@ -414,6 +439,51 @@ namespace PixelEngine.Examples {
 		}
 
 
+		private static Vector2 Swizzle(Vector2 v) { return new Vector2(v.y, v.x); }
+		/// <summary> Render a 'shot' sprite using rotational symmetry. </summary>
+		/// <param name="seed"></param>
+		/// <returns></returns>
+		public static ISprite RenderShot(int seed) {
+			Randoms.Seed = seed;
+			Pixel[] palette = new Pixel[4];
+			int size = Randoms.Range(7, 20);
+			
+			long mask = -1;
+			long bits = PickBits(mask, size + 4);
+			PalettedSprite spr = new PalettedSprite(15, 15, palette);
+			
+			for (int i = 0; i < 64; i++) {
+				if ((bits & (1 << i)) == 0) {
+					continue;
+				}
+
+				Vector2Int mid = new Vector2Int(size/2, size/2);
+				if (size % 2 == 1) { mid+=Vector2Int.one; }
+				Vector2Int delta = new Vector2Int(i % size, i / size);
+
+				for (int k = 0; k < 8; k++) {
+					Vector2Int start = mid;
+					Vector2Int step = delta;
+					int quad = k / 2;
+					if (size % 2 == 0) {
+						if (quad == 0) {
+							start.x += 1;
+						} else if (quad == 1) {
+						} else if (quad == 2) {
+							start.y += 1;
+						} else if (quad == 3) {
+							start += Vector2Int.one;
+						}
+					}
+					if (k == 0) { step.y *= -1; }
+
+
+				}
+
+			}
+
+			return spr;
+		}
 
 
 	}
