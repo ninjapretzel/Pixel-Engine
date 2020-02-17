@@ -58,6 +58,26 @@ namespace PixelEngine {
 			colorData = new Pixel[Width * Height];
 		}
 
+		/// <summary> Create a sprite from a <see cref="byte"/>[] and a <see cref="Pixel"/>[] palette. </summary>
+		/// <param name="w"> Width of the sprite. </param>
+		/// <param name="h"> Height of the sprite. </param>
+		/// <param name="data"> Array of numbers representing colors to use. Each <see cref="byte"/> 
+		/// represents 1 pixel worth of data, as indexed in <paramref name="palette"/>. </param>
+		/// <param name="palette"> Colors to use to set up the sprite </param>
+		public Sprite(int w, int h, byte[] data, Pixel[] palette) {
+			Width = w;
+			Height = h;
+			int stop = w * h;
+			if (stop != data.Length) {
+				throw new Exception($"Wrong amount of data used to initialize sprite. Expected {stop} bytes, had {data.Length}.");
+			}
+			colorData = new Pixel[Width * Height];
+			int paletteSize = palette.Length;
+			for (int i = 0; i < stop; i++) {
+				colorData[i] = palette[data[i] % paletteSize];
+			}
+		}
+
 		/// <summary> Logic for reading <see cref="Pixel"/>s from Sprite. </summary>
 		/// <param name="x"> x coord to read </param>
 		/// <param name="y"> y coord to read </param>
