@@ -1282,6 +1282,117 @@ namespace PixelEngine {
 			}
 
 		}
+
+		private Bitflags overdraw = new Bitflags(16*16);
+		/// <summary> Draws outlined text to the screen. </summary>
+		/// <param name="p"> Screen <see cref="Point"/> to draw text to </param>
+		/// <param name="text"> Text to draw </param>
+		/// <param name="col"> <see cref="Pixel"/> color to draw text with </param>
+		/// <param name="outlineCol"> <see cref="Pixel"/> color to draw text outline with </param>
+		/// <param name="scale"> Scale to apply to resize text </param>
+		public void DrawTextOutline(Point p, string text, Pixel col, Pixel outlineCol, int scale = 1) {
+			if (string.IsNullOrWhiteSpace(text)) {
+				return;
+			}
+			Pixel.Mode prev = PixelMode;
+			Bitflags overdraw = null;
+
+			// Outlines are drawn from (-1, GLYPH_DIM+1) in both X and Y
+			int OUTLINE_HEIGHT = 2 + Font.CharHeight;
+			if (PixelMode != Pixel.Mode.Custom) {
+				if (col.A != 255 || outlineCol.A != 255) { 
+					PixelMode = Pixel.Mode.Alpha; 
+					// Prep overdraw checker with enough space to track each pixel for a double-wide character. 
+					overdraw = this.overdraw;
+					overdraw.Expand(OUTLINE_HEIGHT * OUTLINE_HEIGHT * 2 - 1);
+
+				} 
+				else { PixelMode = Pixel.Mode.Mask; }
+			}
+			
+			bool AlreadyDrawn(int x, int y) {
+				if (overdraw != null) {
+					int xa = x + 1;
+					int ya = y + 1;
+					int index = xa + OUTLINE_HEIGHT * ya;
+					return overdraw[index];
+				}
+				return false;
+			}
+			void Drawn(int x, int y) {
+				if (overdraw != null) {
+					int xa = x + 1;
+					int ya = y + 1;
+					int index = xa + OUTLINE_HEIGHT * ya;
+					overdraw[index] = true;
+				}
+			}
+			
+			int sx = 0;
+			int sy = 0;
+
+			foreach (char c in text) {
+				if (c == '\n') {
+					sx = 0;
+					sy += Font.CharHeight * scale;
+				} else {
+					if (Font.Glyphs.TryGetValue(c, out Sprite cur)) {
+						overdraw?.Clear();
+
+						if (scale > 1) {
+							for (int i = 0; i < cur.Width; i++) {
+								for (int j = 0; j < cur.Height; j++) {
+									if (cur[i, j].R > 0) {
+										bool outlineLeft	= !AlreadyDrawn(i-1, j) && (i == 0 || cur[i-1, j].R <= 0);
+										bool outlineUp		= !AlreadyDrawn(i, j-1) && (j == 0 || cur[i, j-1].R <= 0);
+										bool outlineRight	= !AlreadyDrawn(i+1, j) && (i == cur.Width - 1 || cur[i+1, j].R <= 0);
+										bool outlineDown	= !AlreadyDrawn(i, j+1) && (j == cur.Height - 1 || cur[i, j+1].R <= 0);
+
+										for (int ax = 0; ax < scale; ax++) {
+											for (int ay = 0; ay < scale; ay++) {
+												Draw(p.X + sx + (i * scale) + ax, p.Y + sy + (j * scale) + ay, col);
+												if (outlineLeft)	{ Draw(p.X + sx + ((i-1) * scale) + ax, p.Y + sy + (j * scale) + ay, outlineCol); }
+												if (outlineUp)		{ Draw(p.X + sx + (i * scale) + ax, p.Y + sy + ((j-1) * scale) + ay, outlineCol); }
+												if (outlineRight)	{ Draw(p.X + sx + ((i+1) * scale) + ax, p.Y + sy + (j * scale) + ay, outlineCol); }
+												if (outlineDown)	{ Draw(p.X + sx + (i * scale) + ax, p.Y + sy + ((j+1) * scale) + ay, outlineCol); }
+											}
+										}
+										if (outlineLeft)	{ Drawn(i-1, j); }
+										if (outlineUp)		{ Drawn(i, j-1); }
+										if (outlineRight)	{ Drawn(i+1, j); }
+										if (outlineDown)	{ Drawn(i, j+1); }
+									}
+								}
+							}
+						} else {
+							for (int i = 0; i < cur.Width; i++) {
+								for (int j = 0; j < cur.Height; j++) {
+									if (cur[i, j].R > 0) {
+										Draw(p.X + sx + i, p.Y + sy + j, col);
+										if (!AlreadyDrawn(i-1,j) && (i == 0 || cur[i-1, j].R <= 0)) { Draw(p.X + sx + i - 1, p.Y + sy + j, outlineCol); Drawn(i-1,j); }
+										if (!AlreadyDrawn(i,j-1) && (j == 0 || cur[i, j-1].R <= 0)) { Draw(p.X + sx + i, p.Y + sy + j - 1, outlineCol); Drawn(i,j-1); }
+										if (!AlreadyDrawn(i+1,j) && (i == cur.Width-1 || cur[i+1, j].R <= 0)) { Draw(p.X + sx + i + 1, p.Y + sy + j, outlineCol); Drawn(i+1,j); }
+										if (!AlreadyDrawn(i,j+1) && (j == cur.Height-1 || cur[i, j+1].R <= 0)) { Draw(p.X + sx + i , p.Y + sy + j + 1, outlineCol); Drawn(i,j+1); }
+									}
+								}
+							}
+						}
+
+						sx += cur.Width * scale;
+
+					} else {
+						sx += scale * 8;
+					}
+				}
+			}
+
+			if (PixelMode != Pixel.Mode.Custom) { PixelMode = prev; }
+
+		}
+
+
+
+
 		/// <summary> Draws High-res text to the screen. Requires the <see cref="Subsystem.HrText"/> to be <see cref="Enable(Subsystem)"/>'d </summary>
 		/// <param name="p"> Screen <see cref="Point"/> to draw text to </param>
 		/// <param name="text"> Text to draw </param>

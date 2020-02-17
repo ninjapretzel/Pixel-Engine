@@ -61,6 +61,105 @@
         <member name="M:PixelEngine.Examples.GameOfLife.OnKeyPress(PixelEngine.Key)">
             <inheritdoc />
         </member>
+        <member name="T:PixelEngine.Examples.Invaders">
+            <summary> Example Space Invadorks game </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.Run(System.String[])">
+            <summary> Entrypoint </summary>
+        </member>
+        <member name="T:PixelEngine.Examples.Invaders.Entity">
+            <summary> Simple entity class </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.OnCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.OnUpdate(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.countBits(System.Int64)">
+            <summary> Quickly count the number of bits in a long. </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.PickBits(System.Int64,System.Int32)">
+            <summary> Pick up to <paramref name="numBits"/> bits from locations that are set to 1 in a <paramref name="mask"/>. </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.SplatBits(System.Int64,System.Int32)">
+            <summary> Randomly splat bits and cut down with a <paramref name="mask"/>, and accept it when there are at least <paramref name="minBits"/> in the splat. </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.RenderInvaderSprite(PixelEngine.PalettedSprite,System.Int64,System.Int32)">
+            <summary> Render invader <paramref name="bits"/> into a <see cref="T:PixelEngine.PalettedSprite"/> using the given palette <paramref name="index"/></summary>
+        </member>
+        <member name="T:PixelEngine.Examples.Invaders.InvaderRenderSettings">
+            <summary> Parameterized settings for creating invader sprites. </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minFrames">
+            <summary> Control of number of pose frames to render</summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxFrames">
+            <summary> Control of number of pose frames to render</summary>
+        </member>
+        <member name="P:PixelEngine.Examples.Invaders.InvaderRenderSettings.nextFrames">
+            <summary> Get number of poses to render </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minLayers">
+            <summary> Control of number of layers to create. Any after 1 are considered 'decoration' layers </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxLayers">
+            <summary> Control of number of layers to create. Any after 1 are considered 'decoration' layers </summary>
+        </member>
+        <member name="P:PixelEngine.Examples.Invaders.InvaderRenderSettings.nextLayers">
+            <summary> Get number of layers to render </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minSize">
+            <summary> Control of sprite dimension for both width and height </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxSize">
+            <summary> Control of sprite dimension for both width and height </summary>
+        </member>
+        <member name="P:PixelEngine.Examples.Invaders.InvaderRenderSettings.nextSize">
+            <summary> Get a dimension </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.hueChange">
+            <summary> Control of how much 'decoration' colors may vary from base color </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minSatChange">
+            <summary> Control of how much 'decoration' colors may vary from base color </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxSatChange">
+            <summary> Control of how much 'decoration' colors may vary from base color </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minValChange">
+            <summary> Control of how much 'decoration' colors may vary from base color </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxValChange">
+            <summary> Control of how much 'decoration' colors may vary from base color </summary>
+        </member>
+        <member name="P:PixelEngine.Examples.Invaders.InvaderRenderSettings.nextHsvChange">
+            <summary> Get the change to 'decoration' color for one layer. </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minDeco">
+            <summary> Control of 'decoration' pixels per layer</summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxDeco">
+            <summary> Control of 'decoration' pixels per layer</summary>
+        </member>
+        <member name="P:PixelEngine.Examples.Invaders.InvaderRenderSettings.nextDeco">
+            <summary> Get the number of 'deco' pixels on a 'decoration' layer </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.minAnim">
+            <summary> Control of 'animation' changes per layer per pose </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.Invaders.InvaderRenderSettings.maxAnim">
+            <summary> Control of 'animation' changes per layer per pose </summary>
+        </member>
+        <member name="P:PixelEngine.Examples.Invaders.InvaderRenderSettings.nextAnim">
+            <summary> Get the number of pixels to change on a pose </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.Invaders.RenderInvaderPoses(System.Int32,PixelEngine.Examples.Invaders.InvaderRenderSettings)">
+            <summary> Create an invader from a <paramref name="seed"/>, rendering a set of sprites for all of its 'poses' </summary>
+        </member>
         <member name="T:PixelEngine.Examples.Matrix">
             <summary> Example that lets you see the code, circa 1999. </summary>
         </member>
@@ -101,6 +200,34 @@
             <inheritdoc />
         </member>
         <member name="M:PixelEngine.Examples.Mazes.OnUpdate(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="M:PixelEngine.Examples.PopUpMenuDemo.Run(System.String[])">
+            <summary> Entry point, formerly Main. </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.PopUpMenuDemo.menu">
+            <summary> Menu Manager to use to navigate the menu </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.PopUpMenuDemo.root">
+            <summary> Menu object holding information about where things are </summary>
+        </member>
+        <member name="F:PixelEngine.Examples.PopUpMenuDemo.lastAction">
+            <summary> Demo selection. </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.PopUpMenuDemo.OnCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:PixelEngine.Examples.PopUpMenuDemo.OnUpdate(System.Single)">
+            <inheritdoc />
+        </member>
+        <member name="T:PixelEngine.Examples.OutlinedText">
+            <summary> Example showing usage of outlined text </summary>
+        </member>
+        <member name="M:PixelEngine.Examples.OutlinedText.Run(System.String[])">
+            <summary> Entry point </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:PixelEngine.Examples.OutlinedText.OnUpdate(System.Single)">
             <inheritdoc />
         </member>
         <member name="T:PixelEngine.Examples.PalettePanning">
@@ -470,9 +597,29 @@
         <member name="F:PixelEngine.Utilities.Bitflags.BLOCKSIZE">
             <summary> Size of a single int block </summary>
         </member>
-        <member name="M:PixelEngine.Utilities.Bitflags.CopyFlags">
-            <summary> Creates a copy of the flags </summary>
+        <member name="M:PixelEngine.Utilities.Bitflags.CopyBlocks">
+            <summary> Creates a blockwise copy of the flags </summary>
             <returns> Array of ints containing the flag data. </returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.Bitflags.CopyBlocks(System.Int32[],System.Int32,System.Int32)">
+            <summary> Reads the bits from this <see cref="T:PixelEngine.Utilities.Bitflags"/> into a <paramref name="target"/> <see cref="T:System.Int32"/>[]. </summary>
+            <param name="target"> Target to copy into </param>
+            <param name="blockStart"> Block to start copying from </param>
+            <param name="blockCount"> Count of blocks to copy. </param>
+            <returns></returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.Bitflags.SetBlocks(System.Int32[],System.Int32,System.Int32)">
+            <summary> Set blocks in this <see cref="T:PixelEngine.Utilities.Bitflags"/> from an external source. </summary>
+            <param name="blocks"> Block data to copy from </param>
+            <param name="start"> Block position in this <see cref="T:PixelEngine.Utilities.Bitflags"/> to begin at </param>
+            <param name="count"> Number of blocks to copy </param>
+        </member>
+        <member name="M:PixelEngine.Utilities.Bitflags.CopyFlags(System.Int32[],System.Int32,System.Int32)">
+            <summary> Reads the bits from this <see cref="T:PixelEngine.Utilities.Bitflags"/> into a <paramref name="target"/> <see cref="T:System.Int32"/>[]. </summary>
+            <param name="target"> Target to copy into </param>
+            <param name="bitStart"> Bit to start copying from </param>
+            <param name="bitCount"> Count of bits to copy. </param>
+            <returns> Target array </returns>
         </member>
         <member name="M:PixelEngine.Utilities.Bitflags.#ctor(System.Int32)">
             <summary> Constructs a bitflags with at least <paramref name="numFlags"/> in capacity. </summary>
@@ -482,11 +629,14 @@
             <summary> Constructs a bitflags with a copy of the given flags </summary>
             <param name="data"> Flags to copy </param>
         </member>
-        <member name="M:PixelEngine.Utilities.Bitflags.Expand">
-            <summary> Expand the Bitflags by one block </summary>
+        <member name="M:PixelEngine.Utilities.Bitflags.Expand(System.Int32)">
+            <summary> Expand the Bitflags so the desired index is available, or just one block (if desiredIndex is negative) </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.Bitflags.Clear">
+            <summary> Clear all flags to 0 (unset) </summary>
         </member>
         <member name="M:PixelEngine.Utilities.Bitflags.MaybeExpand(System.Int32)">
-            <summary> Might expand the bitflags. Expands if just one more block is needed to have <paramref name="desiredIndex"/> within <see cref="P:PixelEngine.Utilities.Bitflags.Capacity"/>. </summary>
+            <summary> Might expand the bitflags by one block. Expands if just one more block is needed to have <paramref name="desiredIndex"/> within <see cref="P:PixelEngine.Utilities.Bitflags.Capacity"/>. </summary>
             <param name="desiredIndex"> Index desired to access </param>
             <returns> True, if <paramref name="desiredIndex"/> is now valid, false otherwise. </returns>
         </member>
@@ -1903,6 +2053,192 @@
             <summary> Search a collection for an item matching a condition. </summary> <typeparam name="T"> Generic type parameter </typeparam>
             <param name="items"> Collection to search </param> <param name="condition"> Condition to match </param>
             <returns> first item matching condition if found, or default value if not found </returns>
+        </member>
+        <member name="T:PixelEngine.Utilities.MenuManager">
+            <summary> Port of OLC's PopUp Menu based on work by sms-apps. </summary>
+            <remarks> Partially taken from https://github.com/sms-apps/OlcPixelGameEngineFun
+            but modified further for convinience with C# features </remarks> 
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuManager.DefaultSprite">
+            <summary> Default menu skin </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuManager.WindowOffset">
+            <summary> Window pixel offset for each nested window that is opened </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuManager.Panels">
+            <summary> Currently open panels </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.Open(PixelEngine.Utilities.MenuObject)">
+            <summary> Close any open menus, and show the given <see cref="T:PixelEngine.Utilities.MenuObject"/>. </summary>
+            <param name="menuObject"> <see cref="T:PixelEngine.Utilities.MenuObject"/> to show. </param>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuManager.IsOpen">
+            <summary> Are we open? </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.Close">
+            <summary> Closes the menu </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuManager.CURSOR_PATCH">
+            <summary> Position of the Cursor sprite object in the sprite sheet </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.Draw(PixelEngine.Game,PixelEngine.Sprite,System.Nullable{PixelEngine.Utilities.Vector2Int})">
+            <summary> Draws the currently open <see cref="T:PixelEngine.Utilities.MenuObject"/>s on the screen </summary>
+            <param name="game"> <see cref="T:PixelEngine.Game"/> to draw to </param>
+            <param name="sheet"> <see cref="T:PixelEngine.Sprite"/> to use as a sheet </param>
+            <param name="offset"> Offset on screen </param>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.OnConfirm">
+            <summary> Call to send the <see cref="T:PixelEngine.Utilities.MenuManager"/> a 'confirmation' event. </summary>
+            <returns> Selected <see cref="T:PixelEngine.Utilities.MenuObject"/>, or null if nothing was selected. </returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.OnBack">
+            <summary> Call to send the <see cref="T:PixelEngine.Utilities.MenuManager"/> a 'back' event. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.OnUp">
+            <summary> Call to send the <see cref="T:PixelEngine.Utilities.MenuManager"/> an 'up' event. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.OnDown">
+            <summary> Call to send the <see cref="T:PixelEngine.Utilities.MenuManager"/> a 'down' event. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.OnLeft">
+            <summary> Call to send the <see cref="T:PixelEngine.Utilities.MenuManager"/> a 'left' event. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuManager.OnRight">
+            <summary> Call to send the <see cref="T:PixelEngine.Utilities.MenuManager"/> a 'right' event. </summary>
+        </member>
+        <member name="T:PixelEngine.Utilities.MenuObject">
+            <summary> Implementation of OLC's MenuObject </summary>
+            <remarks> Partially taken from https://github.com/sms-apps/OlcPixelGameEngineFun
+            but modified further for convinience with C# features </remarks> 
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.DEFAULT_PATCH_SIZE">
+            <summary> Size (in game pixels) of a single menu 'patch' sprite. </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Cursor">
+            <summary> Current cursor position in this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+            <remarks> Just a note, I would avoid using properties to wrap structs.
+            If you use properties, you can't do 'someMenu.CellCursor.x = 5'; 
+            since modifying a struct return value of an accessor property does not modify the one contained in the class.
+            If there's no access difference between get/set, I would just keep it as a plain field. </remarks>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Padding">
+            <summary> Number of empty cells between each entry in this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Size">
+            <summary> Size in cells of this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Table">
+            <summary> Size of the 'table' for this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.CursorIndex">
+            <summary> Current index of the cursor in this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.CursorPos">
+            <summary> Current cursor position of this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Enabled">
+            <summary> Is this <see cref="T:PixelEngine.Utilities.MenuObject"/> enabled? </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Id">
+            <summary> ID of this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Indexes">
+            <summary> Content from string to ID </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Items">
+            <summary> Ordered list of elements in this Submenu </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.Name">
+            <summary> Name of this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.PatchSize">
+            <summary> Size of a single 'patch' tile in this <see cref="T:PixelEngine.Utilities.MenuObject"/>. </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.SizeInPatches">
+            <summary> Calculated size of this <see cref="T:PixelEngine.Utilities.MenuObject"/> in patch tiles. </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuObject.TopVisibleRow">
+            <summary> Index of the current top visible row in this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuObject.TotalRows">
+            <summary> Total number of rows in this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuObject.Selected">
+            <summary> Currently selected item </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuObject.MeasuredSize">
+            <summary> Size of this <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuObject.HasChildren">
+            <summary> Does this <see cref="T:PixelEngine.Utilities.MenuObject"/> have any children? </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.MenuObject.Item(System.String)">
+            <summary> Allow access down into <see cref="T:PixelEngine.Utilities.MenuObject"/> as an indexer. </summary>
+            <param name="key"> Name of <see cref="T:PixelEngine.Utilities.MenuObject"/> to get. </param>
+            <returns> Submenu with the given name, creating it if it did not exist before. </returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.#ctor">
+            <summary> Empty constructor, makes the root <see cref="T:PixelEngine.Utilities.MenuObject"/> </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.#ctor(System.String)">
+            <summary> Makes a Submenu with the given <paramref name="name"/>. </summary>
+            <param name="name"> Name of this <see cref="T:PixelEngine.Utilities.MenuObject"/></param>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.SetTable(System.Int32,System.Int32)">
+            <summary> Sets the <see cref="F:PixelEngine.Utilities.MenuObject.Table"/> field of this <see cref="T:PixelEngine.Utilities.MenuObject"/> 
+            and returns the <see cref="T:PixelEngine.Utilities.MenuObject"/> it was called on </summary>
+            <param name="cols"> Number of columns in the table </param>
+            <param name="rows"> Number of rows in the table </param>
+            <returns> Same <see cref="T:PixelEngine.Utilities.MenuObject"/> that the method was called on. </returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.SetId(System.Int32)">
+            <summary> Sets the <see cref="F:PixelEngine.Utilities.MenuObject.Id"/> field of this <see cref="T:PixelEngine.Utilities.MenuObject"/> 
+            and returns the same <see cref="T:PixelEngine.Utilities.MenuObject"/> it was called on </summary>
+            <param name="id"> ID to set </param>
+            <returns> Same <see cref="T:PixelEngine.Utilities.MenuObject"/> that the method was called on.</returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.Enable(System.Boolean)">
+            <summary> Sets the <see cref="F:PixelEngine.Utilities.MenuObject.Enabled"/> field of this <see cref="T:PixelEngine.Utilities.MenuObject"/>
+            and returns the same <see cref="T:PixelEngine.Utilities.MenuObject"/> it was called on </summary>
+            <param name="b"> Should the option be enabled? </param>
+            <returns> Same <see cref="T:PixelEngine.Utilities.MenuObject"/> that the method was called on. </returns>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.Build">
+            <summary> Build this <see cref="T:PixelEngine.Utilities.MenuObject"/> and all children. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.OnConfirm">
+            <summary> Called to send a 'confirm' signal. </summary>
+            <returns> Selected Submenu to enter </returns>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.UP_SCROLL_PATCH">
+            <summary> Location in sprite sheet for the 'up scroll hint' </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.DOWN_SCROLL_PATCH">
+            <summary> Location in sprite sheet for the 'down scroll hint' </summary>
+        </member>
+        <member name="F:PixelEngine.Utilities.MenuObject.EXPAND_PATCH">
+            <summary> Location in sprite sheet for the 'another menu hint' </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.Draw(PixelEngine.Game,PixelEngine.Sprite,System.Nullable{PixelEngine.Utilities.Vector2Int})">
+            <summary> Draws only this panel on the game's screen. </summary>
+            <param name="game"> <see cref="T:PixelEngine.Game"/> to draw to </param>
+            <param name="sheet"> <see cref="T:PixelEngine.Sprite"/> sheet to draw with </param>
+            <param name="offset"> Optional offset on screen </param>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.OnUp">
+            <summary> Called to send an 'up' signal. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.OnDown">
+            <summary> Called to send a 'down' signal. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.OnLeft">
+            <summary> Called to send a 'left' signal. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.OnRight">
+            <summary> Called to send a 'right' signal. </summary>
+        </member>
+        <member name="M:PixelEngine.Utilities.MenuObject.ClampCursor">
+            <summary> Prevent cursor index from going out of the menu </summary>
         </member>
         <member name="T:PixelEngine.Utilities.Noise">
             <summary> Helper class for noise functions </summary>
@@ -3386,6 +3722,10 @@
         <member name="M:PixelEngine.Utilities.Bounds.Expand(PixelEngine.Utilities.Vector3)">
             <summary> Expand the <see cref="T:PixelEngine.Utilities.Bounds"/> in the directions given by <paramref name="amount"/>. </summary>
         </member>
+        <member name="M:PixelEngine.Utilities.Bounds.Minkowski(PixelEngine.Utilities.Bounds)">
+            <summary> Get the Minkowski Difference between this and another <see cref="T:PixelEngine.Utilities.Bounds"/> </summary>
+            <remarks>https://blog.hamaluik.ca/posts/simple-aabb-collision-using-minkowski-difference/</remarks>
+        </member>
         <member name="M:PixelEngine.Utilities.Bounds.Intersects(PixelEngine.Utilities.Bounds)">
             <summary> Does this <see cref="T:PixelEngine.Utilities.Bounds"/> intersect the other <paramref name="bounds"/>? </summary>
         </member>
@@ -4306,6 +4646,14 @@
             <param name="col"> <see cref="T:PixelEngine.Pixel"/> color to draw text with </param>
             <param name="scale"> Scale to apply to resize text </param>
         </member>
+        <member name="M:PixelEngine.Game.DrawTextOutline(PixelEngine.Point,System.String,PixelEngine.Pixel,PixelEngine.Pixel,System.Int32)">
+            <summary> Draws outlined text to the screen. </summary>
+            <param name="p"> Screen <see cref="T:PixelEngine.Point"/> to draw text to </param>
+            <param name="text"> Text to draw </param>
+            <param name="col"> <see cref="T:PixelEngine.Pixel"/> color to draw text with </param>
+            <param name="outlineCol"> <see cref="T:PixelEngine.Pixel"/> color to draw text outline with </param>
+            <param name="scale"> Scale to apply to resize text </param>
+        </member>
         <member name="M:PixelEngine.Game.DrawTextHr(PixelEngine.Point,System.String,PixelEngine.Pixel,System.Int32)">
             <summary> Draws High-res text to the screen. Requires the <see cref="F:PixelEngine.Game.Subsystem.HrText"/> to be <see cref="M:PixelEngine.Game.Enable(PixelEngine.Game.Subsystem)"/>'d </summary>
             <param name="p"> Screen <see cref="T:PixelEngine.Point"/> to draw text to </param>
@@ -4463,6 +4811,15 @@
             <param name="argb"><see cref="T:System.UInt32"/>[] value treated as 0xAARRGGBB </param>
             <returns> <see cref="T:PixelEngine.Pixel"/> representing value of given ARGB </returns>
         </member>
+        <member name="M:PixelEngine.Pixel.HSVA(System.Single,System.Single,System.Single,System.Single)">
+            <summary> Create a <see cref="T:PixelEngine.Pixel"/> color from HSVA (Hue, Saturation, Value, Alpha) floats. </summary>
+        </member>
+        <member name="M:PixelEngine.Pixel.HSVA(PixelEngine.Utilities.Vector4)">
+            <summary> Create a <see cref="T:PixelEngine.Pixel"/> from HSVA information packed into a <see cref="T:PixelEngine.Utilities.Vector4"/> </summary>
+        </member>
+        <member name="M:PixelEngine.Pixel.RGBA(PixelEngine.Utilities.Vector4)">
+            <summary> Create a <see cref="T:PixelEngine.Pixel"/> from RGBA information packed into a <see cref="T:PixelEngine.Utilities.Vector4"/> </summary>
+        </member>
         <member name="M:PixelEngine.Pixel.PaletteARGB(System.UInt32[])">
             <summary> Convert a list of ARGB values into a <see cref="T:PixelEngine.Pixel"/>[] for ease of creating palettes. </summary>
             <param name="argb"> <see cref="T:System.UInt32"/>[] to use as ARGB color source </param>
@@ -4489,10 +4846,13 @@
         </member>
         <member name="M:PixelEngine.Pixel.FromHsv(System.Single,System.Single,System.Single)">
             <summary> Create a color from HSV space coordinates </summary>
-            <param name="h"> Hue (Angle of color, [0, 1]) </param>
-            <param name="s"> Saturation (Grayscale or Vibrant [0, 1]) </param>
-            <param name="v"> Value (Dark or Bright [0, 1]) </param>
+            <param name="h"> Hue (Angle of color, repeats [0, 1]) </param>
+            <param name="s"> Saturation (Grayscale or Vibrant, clamped [0, 1]) </param>
+            <param name="v"> Value (Dark or Bright, clamped [0, 1]) </param>
             <returns> Pixel representing value of given HSV </returns>
+        </member>
+        <member name="M:PixelEngine.Pixel.ToHSVA">
+            <summary> Turn this Pixel into a <see cref="T:PixelEngine.Utilities.Vector4"/> containing HSVA information in XYZW channels, respetively. </summary>
         </member>
         <member name="M:PixelEngine.Pixel.op_Equality(PixelEngine.Pixel,PixelEngine.Pixel)">
             <summary> Compare two pixels by all color channels </summary> <returns> True if the two are completely equal, false otherwise </returns>
@@ -4802,6 +5162,14 @@
             <param name="w"> Width of sprite </param>
             <param name="h"> Height of sprite </param>
         </member>
+        <member name="M:PixelEngine.Sprite.#ctor(System.Int32,System.Int32,System.Byte[],PixelEngine.Pixel[])">
+            <summary> Create a sprite from a <see cref="T:System.Byte"/>[] and a <see cref="T:PixelEngine.Pixel"/>[] palette. </summary>
+            <param name="w"> Width of the sprite. </param>
+            <param name="h"> Height of the sprite. </param>
+            <param name="data"> Array of numbers representing colors to use. Each <see cref="T:System.Byte"/> 
+            represents 1 pixel worth of data, as indexed in <paramref name="palette"/>. </param>
+            <param name="palette"> Colors to use to set up the sprite </param>
+        </member>
         <member name="M:PixelEngine.Sprite.GetPixel(System.Int32,System.Int32)">
             <summary> Logic for reading <see cref="T:PixelEngine.Pixel"/>s from Sprite. </summary>
             <param name="x"> x coord to read </param>
@@ -4848,7 +5216,7 @@
         <member name="F:PixelEngine.PalettedSprite.colors">
             <summary> Information about what colors are in what positions. 0 is always transparent. </summary>
         </member>
-        <member name="F:PixelEngine.PalettedSprite.palette">
+        <member name="P:PixelEngine.PalettedSprite.palette">
             <summary> Palette of <see cref="T:PixelEngine.Pixel"/> colors. </summary>
         </member>
         <member name="P:PixelEngine.PalettedSprite.Width">
@@ -4885,6 +5253,15 @@
             <summary> Create a copy of a given <see cref="T:PixelEngine.PalettedSprite"/> with the given <paramref name="palette"/> </summary>
             <param name="orig"> Orignal <see cref="T:PixelEngine.PalettedSprite"/> to share palette indexes with </param>
             <param name="palette"> <see cref="T:PixelEngine.Pixel"/>[] to use as this sprite's Palette. </param>
+        </member>
+        <member name="M:PixelEngine.PalettedSprite.LoadFromPSPR(System.String)">
+            <summary> Attempts to load a <see cref="T:PixelEngine.PalettedSprite"/> from a `.pspr` format file </summary>
+            <param name="path"> Path to file to load </param>
+            <returns> Loaded sprite or null if load was unsuccessful. </returns>
+        </member>
+        <member name="M:PixelEngine.PalettedSprite.SaveToPSPR(System.String)">
+            <summary> Attempts to save a <see cref="T:PixelEngine.PalettedSprite"/> to a `.pspr` format file </summary>
+            <param name="path"> Path to save to </param>
         </member>
         <member name="T:PixelEngine.Shader">
             <summary> Helper class for wrapping a <see cref="T:PixelEngine.ShaderFunc"/>. </summary>

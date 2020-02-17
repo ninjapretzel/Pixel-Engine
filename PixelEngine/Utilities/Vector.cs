@@ -1287,6 +1287,19 @@ namespace PixelEngine.Utilities {
 		/// <summary> Expand the <see cref="Bounds"/> in the directions given by <paramref name="amount"/>. </summary>
 		public void Expand(Vector3 amount) { extents += (amount * .5f).Abs(); }
 
+
+		/// <summary> Get the Minkowski Difference between this and another <see cref="Bounds"/> </summary>
+		/// <remarks>https://blog.hamaluik.ca/posts/simple-aabb-collision-using-minkowski-difference/</remarks>
+		public Bounds Minkowski(Bounds other) { 
+			Bounds result = default;
+			Vector3 topLeft = min - other.max;
+			Vector3 ext = (size + other.size) / 2.0f;
+			
+			result.center = topLeft + ext;
+			result.extents = ext;
+			return result;
+		}
+		
 		/// <summary> Does this <see cref="Bounds"/> intersect the other <paramref name="bounds"/>? </summary>
 		public bool Intersects(Bounds bounds) {
 			Vector3 amin = min; Vector3 amax = max;

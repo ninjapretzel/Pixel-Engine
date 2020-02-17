@@ -1,3 +1,4 @@
+using PixelEngine.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -55,6 +56,26 @@ namespace PixelEngine {
 			Height = h;
 
 			colorData = new Pixel[Width * Height];
+		}
+
+		/// <summary> Create a sprite from a <see cref="byte"/>[] and a <see cref="Pixel"/>[] palette. </summary>
+		/// <param name="w"> Width of the sprite. </param>
+		/// <param name="h"> Height of the sprite. </param>
+		/// <param name="data"> Array of numbers representing colors to use. Each <see cref="byte"/> 
+		/// represents 1 pixel worth of data, as indexed in <paramref name="palette"/>. </param>
+		/// <param name="palette"> Colors to use to set up the sprite </param>
+		public Sprite(int w, int h, byte[] data, Pixel[] palette) {
+			Width = w;
+			Height = h;
+			int stop = w * h;
+			if (stop != data.Length) {
+				throw new Exception($"Wrong amount of data used to initialize sprite. Expected {stop} bytes, had {data.Length}.");
+			}
+			colorData = new Pixel[Width * Height];
+			int paletteSize = palette.Length;
+			for (int i = 0; i < stop; i++) {
+				colorData[i] = palette[data[i] % paletteSize];
+			}
 		}
 
 		/// <summary> Logic for reading <see cref="Pixel"/>s from Sprite. </summary>
@@ -251,7 +272,8 @@ namespace PixelEngine {
 		/// <summary> Information about what colors are in what positions. 0 is always transparent. </summary>
 		private byte[] colors = null;
 		/// <summary> Palette of <see cref="Pixel"/> colors. </summary>
-		private Pixel[] palette = null;
+		public Pixel[] palette { get; private set; } = null;
+
 
 		/// <summary> Width of sprite </summary>
 		public int Width { get; private set; }
@@ -316,6 +338,68 @@ namespace PixelEngine {
 			Height = orig.Height;
 			colors = orig.colors;
 			this.palette = palette;
+		}
+
+		/// <summary> Attempts to load a <see cref="PalettedSprite"/> from a `.pspr` format file </summary>
+		/// <param name="path"> Path to file to load </param>
+		/// <returns> Loaded sprite or null if load was unsuccessful. </returns>
+		public static PalettedSprite LoadFromPSPR(string path) {
+			PalettedSprite spr = null;
+
+			try {
+				using (Stream stream = File.OpenRead(path)) {
+					using (BinaryReader reader = new BinaryReader(stream)) {
+						
+						if (((char)reader.ReadByte()) != 'P') { throw new InvalidDataException("Data file does not have PSPR header."); }
+						if (((char)reader.ReadByte()) != 'S') { throw new InvalidDataException("Data file does not have PSPR header."); }
+						if (((char)reader.ReadByte()) != 'P') { throw new InvalidDataException("Data file does not have PSPR header."); }
+						if (((char)reader.ReadByte()) != 'R') { throw new InvalidDataException("Data file does not have PSPR header."); }
+						
+						
+						int w = reader.ReadInt32();
+						int h = reader.ReadInt32();
+						int ncol = Mathf.Min(255, reader.ReadInt32());
+						Pixel[] placeholderPalette = new Pixel[ncol+1];
+						
+						spr = new PalettedSprite(w,h,placeholderPalette);
+
+						for (int y = 0; y < h; y++) {
+							for (int x = 0; x < w; x++) {
+								spr.SetIndex(x,y, reader.ReadByte());
+							}
+						}
+					}
+				}
+
+			} catch (Exception e) {
+				Console.WriteLine($"Error Loading PSPR {e}");
+				spr = null;
+			}
+
+
+			return spr;
+		}
+
+		/// <summary> Attempts to save a <see cref="PalettedSprite"/> to a `.pspr` format file </summary>
+		/// <param name="path"> Path to save to </param>
+		public void SaveToPSPR(string path) {
+			using (Stream stream = File.OpenWrite(path)) {
+				using (BinaryWriter writer = new BinaryWriter(stream)) {
+					writer.Write((byte)'P');
+					writer.Write((byte)'S');
+					writer.Write((byte)'P');
+					writer.Write((byte)'R');
+					writer.Write(Width);
+					writer.Write(Height);
+					writer.Write(Mathf.Min(255, palette.Length - 1));
+					
+					for (int y = 0; y < Height; y++) {
+						for (int x = 0; x < Width; x++) {
+							writer.Write(GetIndex(x,y));
+						}
+					}
+				}
+			}
 		}
 
 	}

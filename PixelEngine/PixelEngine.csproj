@@ -46,9 +46,12 @@
     <Compile Include="Examples\ChaosGame.cs" />
     <Compile Include="Examples\Dodger.cs" />
     <Compile Include="Examples\GameOfLife.cs" />
+    <Compile Include="Examples\Invaders.cs" />
     <Compile Include="Examples\Matrix.cs" />
     <Compile Include="Examples\MatrixRedux.cs" />
     <Compile Include="Examples\Mazes.cs" />
+    <Compile Include="Examples\PopUpMenuDemo.cs" />
+    <Compile Include="Examples\OutlinedText.cs" />
     <Compile Include="Examples\PalettePanning.cs" />
     <Compile Include="Examples\PerlinNoise.cs" />
     <Compile Include="Examples\RandomPixels.cs" />
@@ -70,6 +73,7 @@
     <Compile Include="ResxHelper.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="Utilities\Menus.cs" />
     <Compile Include="Utilities\Noise.cs" />
     <Compile Include="OpenGL.cs" />
     <Compile Include="Pixel.cs" />

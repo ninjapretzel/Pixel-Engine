@@ -65,12 +65,59 @@ namespace PixelEngine.Utilities {
 		/// <summary> Size of a single int block </summary>
 		public static readonly int BLOCKSIZE = 8 * sizeof(int);
 
-		/// <summary> Creates a copy of the flags </summary>
+		/// <summary> Creates a blockwise copy of the flags </summary>
 		/// <returns> Array of ints containing the flag data. </returns>
-		public int[] CopyFlags() {
+		public int[] CopyBlocks() {
 			int[] copy = new int[flags.Count];
 			for (int i = 0; i < copy.Length; i++) { copy[i] = flags[i]; }
 			return copy;
+		}
+
+		/// <summary> Reads the bits from this <see cref="Bitflags"/> into a <paramref name="target"/> <see cref="int"/>[]. </summary>
+		/// <param name="target"> Target to copy into </param>
+		/// <param name="blockStart"> Block to start copying from </param>
+		/// <param name="blockCount"> Count of blocks to copy. </param>
+		/// <returns></returns>
+		public int[] CopyBlocks(int[] target, int blockStart, int blockCount) {
+			for (int i = 0; i < blockCount && i < target.Length; i++) {
+				target[i] = flags[i];
+			}
+
+			return target;
+		}
+		/// <summary> Set blocks in this <see cref="Bitflags"/> from an external source. </summary>
+		/// <param name="blocks"> Block data to copy from </param>
+		/// <param name="start"> Block position in this <see cref="Bitflags"/> to begin at </param>
+		/// <param name="count"> Number of blocks to copy </param>
+		public void SetBlocks(int[] blocks, int start, int count) {
+			for (int i = 0; i < count && i < blocks.Length; i++) {
+				flags[start+i] = blocks[i];
+			}
+		}
+
+		/// <summary> Reads the bits from this <see cref="Bitflags"/> into a <paramref name="target"/> <see cref="int"/>[]. </summary>
+		/// <param name="target"> Target to copy into </param>
+		/// <param name="bitStart"> Bit to start copying from </param>
+		/// <param name="bitCount"> Count of bits to copy. </param>
+		/// <returns> Target array </returns>
+		public int[] CopyFlags(int[] target, int bitStart, int bitCount) {
+			int bit = 0;
+			int bitPos = 0;
+			int tPos = 0;
+
+			for (int i = 0; i < bitCount && bitStart + i < Capacity && tPos < target.Length; i++) {
+				bit |= (this[bitStart + i] ? 0 : 1) << (bitPos++);
+				if (bitPos == 32) {
+					target[tPos++] = bit;
+					bit = 0;
+					bitPos = 0;
+				}
+			}
+			if (bit != 0 && tPos < target.Length) {
+				target[tPos] = bit;
+			}
+
+			return target;
 		}
 
 		/// <summary> Constructs a bitflags with at least <paramref name="numFlags"/> in capacity. </summary>
@@ -89,24 +136,40 @@ namespace PixelEngine.Utilities {
 			for (int i = 0; i < data.Length; i++) { flags.Add(data[i]); }
 		}
 
-		/// <summary> Expand the Bitflags by one block </summary>
-		public void Expand() {
-			flags.Add(0);
-			Capacity += BLOCKSIZE;
+		/// <summary> Expand the Bitflags so the desired index is available, or just one block (if desiredIndex is negative) </summary>
+		public void Expand(int desiredIndex = -1) {
+			if (desiredIndex < 0) {
+				flags.Add(0);
+				Capacity += BLOCKSIZE;
+			} else if (desiredIndex > Capacity) {
+				int needed = desiredIndex - Capacity;
+				int blocksToAdd = 1 + (needed / BLOCKSIZE);
+				for (int i = 0; i < blocksToAdd; i++) {
+					flags.Add(0);
+				}
+				Capacity += blocksToAdd * BLOCKSIZE;
+			}
+		}
+		/// <summary> Clear all flags to 0 (unset) </summary>
+		public void Clear() {
+			flags.Clear();
+			for (int i = 0; i < Blocks; i++) { flags.Add(0); }
 		}
 
-		/// <summary> Might expand the bitflags. Expands if just one more block is needed to have <paramref name="desiredIndex"/> within <see cref="Capacity"/>. </summary>
+		/// <summary> Might expand the bitflags by one block. Expands if just one more block is needed to have <paramref name="desiredIndex"/> within <see cref="Capacity"/>. </summary>
 		/// <param name="desiredIndex"> Index desired to access </param>
 		/// <returns> True, if <paramref name="desiredIndex"/> is now valid, false otherwise. </returns>
 		public bool MaybeExpand(int desiredIndex) {
 			if (desiredIndex < Capacity) { return true; }
 			if (desiredIndex < Capacity + BLOCKSIZE) {
-				Expand();
+				Expand(-1);
 				return true;
 			}
+			
 			return false;
 		}
 
+		
 		/// <summary> Gets the int block at the given index in the underlying array. </summary>
 		/// <param name="index"> Index to get. Must be inside [0, <see cref="Blocks"/>-1] </param>
 		/// <returns> int value at block </returns>

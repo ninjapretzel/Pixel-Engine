@@ -1,3 +1,4 @@
+using PixelEngine.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -120,6 +121,27 @@ namespace PixelEngine {
 			byte b = (byte)((argb >> 0) & 0xFF);
 			return new Pixel(r, g, b, a);
 		}
+		/// <summary> Create a <see cref="Pixel"/> color from HSVA (Hue, Saturation, Value, Alpha) floats. </summary>
+		public static Pixel HSVA(float h, float s, float v, float a = 1.0f) {
+			Pixel temp = FromHsv(h,s,v);
+			temp.A = (byte)(int)(a * 255);
+			return temp;
+		}
+		/// <summary> Create a <see cref="Pixel"/> from HSVA information packed into a <see cref="Vector4"/> </summary>
+		public static Pixel HSVA(Vector4 hsva) {
+			Pixel temp = FromHsv(hsva.x, hsva.y, hsva.z);
+			temp.A = (byte)(int)(hsva.w * 255);
+			return temp;
+		}
+		/// <summary> Create a <see cref="Pixel"/> from RGBA information packed into a <see cref="Vector4"/> </summary>
+		public static Pixel RGBA(Vector4 rgba) {
+			Pixel temp = default;
+			temp.R = (byte)(int)(255 * rgba.x);
+			temp.G = (byte)(int)(255 * rgba.y);
+			temp.B = (byte)(int)(255 * rgba.z);
+			temp.A = (byte)(int)(255 * rgba.w);
+			return temp;
+		}
 		/// <summary> Convert a list of ARGB values into a <see cref="Pixel"/>[] for ease of creating palettes. </summary>
 		/// <param name="argb"> <see cref="uint"/>[] to use as ARGB color source </param>
 		/// <returns> <see cref="Pixel"/>[] created from source </returns>
@@ -159,39 +181,77 @@ namespace PixelEngine {
 			return new Pixel(r, g, b, a);
 		}
 		/// <summary> Create a color from HSV space coordinates </summary>
-		/// <param name="h"> Hue (Angle of color, [0, 1]) </param>
-		/// <param name="s"> Saturation (Grayscale or Vibrant [0, 1]) </param>
-		/// <param name="v"> Value (Dark or Bright [0, 1]) </param>
+		/// <param name="h"> Hue (Angle of color, repeats [0, 1]) </param>
+		/// <param name="s"> Saturation (Grayscale or Vibrant, clamped [0, 1]) </param>
+		/// <param name="v"> Value (Dark or Bright, clamped [0, 1]) </param>
 		/// <returns> Pixel representing value of given HSV </returns>
 		public static Pixel FromHsv(float h, float s, float v) {
-			h *= 360;
-			float c = v * s;
-			float nh = (h / 60) % 6;
-			float x = c * (1 - Math.Abs(nh % 2 - 1));
-			float m = v - c;
+			h = Mathf.Repeat(h, 1.0f);
+			s = Mathf.Clamp01(s);
+			v = Mathf.Clamp01(v);
 
-			float r, g, b;
+			int i; 
+			float f,p,q,t;
 
-			if (0 <= nh && nh < 1) {
-				r = c; g = x; b = 0;
-			} else if (1 <= nh && nh < 2) {
-				r = x; g = c; b = 0;
-			} else if (2 <= nh && nh < 3) {
-				r = 0; g = c; b = x;
-			} else if (3 <= nh && nh < 4) {
-				r = 0; g = x; b = c;
-			} else if (4 <= nh && nh < 5) {
-				r = x; g = 0; b = c;
-			} else if (5 <= nh && nh < 6) {
-				r = c; g = 0; b = x;
-			} else {
-				r = 0; g = 0; b = 0;
+			if (s == 0) { 
+				return new Pixel((byte)(v * 255), (byte)(v * 255), (byte)(v * 255)); 
 			}
 
-			r += m; g += m; b += m;
 
-			return new Pixel((byte)Math.Floor(r * 255), (byte)Math.Floor(g * 255), (byte)Math.Floor(b * 255));
+			h *= 6.0f;
+			i = (int)h;
+			f = h - i;
+			p = v * (1 - s);
+			q = v * (1 - s * f);
+			t = v * (1 - s * (1 - f) );
+
+			float r = 0, g = 0, b = 0;
+			if (i == 0) { r = v; g = t; b = p; }
+			if (i == 1) { r = q; g = v; b = p; }
+			if (i == 2) { r = p; g = v; b = t; }
+			if (i == 3) { r = p; g = q; b = v; }
+			if (i == 4) { r = t; g = p; b = v; }
+			if (i == 5) { r = v; g = p; b = q; }
+
+			return new Pixel((byte)(r * 255), (byte)(g * 255), (byte)(b * 255));
 		}
+
+		
+
+		/// <summary> Turn this Pixel into a <see cref="Vector4"/> containing HSVA information in XYZW channels, respetively. </summary>
+		public Vector4 ToHSVA() {
+			float r = R / 255.0f;
+			float g = G / 255.0f; 
+			float b = B / 255.0f; 
+			float a = A / 255.0f; 
+			Vector4 hsva = new Vector4(0, 0, 0, a);
+
+			float max = Mathf.Max(Mathf.Max(r,g), b);
+			if (max <= 0) { return hsva; }
+			// Value
+			hsva.z = max;
+			float min = Mathf.Min(Mathf.Min(r,g), b);
+			float delta = max - min;
+			// Saturation
+			hsva.y = delta / max;
+
+			// Hue
+			float h;
+			if (r == max) {
+				h = (g - b) / delta;
+			} else if (g == max) {
+				h = 2 + (b - r);
+			} else {
+				h = 4 + (r - g) / delta;
+			}
+			h /= 6f; // map from (0...6) to (0...1)
+			if (h < 0) { h += 1; } // Keep in (0...1) if source was out of range
+			
+			hsva.x = h;
+
+			return hsva;
+		}
+
 		/// <summary> Compare two pixels by all color channels </summary> <returns> True if the two are completely equal, false otherwise </returns>
 		public static bool operator ==(Pixel a, Pixel b) {
 			return (a.R == b.R) && (a.G == b.G) && (a.B == b.B) && (a.A == b.A);
