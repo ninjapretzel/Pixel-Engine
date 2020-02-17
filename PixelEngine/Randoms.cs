@@ -18,9 +18,26 @@ namespace PixelEngine {
 		/// <summary> Change the random seed. </summary>
 		public static int Seed { get { return seed; } set { seed = value; rnd = new Random(value); } }
 
+		/// <summary> Quick access to an evenly distributed random float value in range [0, 1) </summary>
+		public static float value { get { return RandomFloat(); } }
+		
+		/// <summary> Quick access to normally distributed random float value in range [0, 1) </summary>
+		public static float normal { get { return (value + value + value) / 3.0f; } }
+
 		/// <summary> Get a single random value between [0, 255] </summary>
 		/// <returns> Single number between 0 and 255 </returns>
 		public static byte RandomByte() { return (byte)rnd.Next(255); }
+
+		/// <summary> Generate a random number inside the given range </summary>
+		/// <param name="min"> Minimum value (inclusive) </param>
+		/// <param name="max"> Maximum value (exclusive) </param>
+		/// <returns> Random float between [<paramref name="min"/>, <paramref name="max"/>) </returns>
+		public static float Range(float min, float max) { return min + value * (max-min); }
+		/// <summary> Generate a random number inside the given range </summary>
+		/// <param name="min"> Minimum value (inclusive) </param>
+		/// <param name="max"> Maximum value (exclusive) </param>
+		/// <returns> Random float between [<paramref name="min"/>, <paramref name="max"/>) </returns>
+		public static int Range(int min, int max) { return (int)(min + value * (max - min)); }
 
 		/// <summary> Get some number of random byte values </summary>
 		/// <param name="count"> Number of bytes to get </param>
