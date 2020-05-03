@@ -160,6 +160,11 @@
         <member name="M:PixelEngine.Examples.Invaders.RenderInvaderPoses(System.Int32,PixelEngine.Examples.Invaders.InvaderRenderSettings)">
             <summary> Create an invader from a <paramref name="seed"/>, rendering a set of sprites for all of its 'poses' </summary>
         </member>
+        <member name="M:PixelEngine.Examples.Invaders.RenderShot(System.Int32)">
+            <summary> Render a 'shot' sprite using rotational symmetry. </summary>
+            <param name="seed"></param>
+            <returns></returns>
+        </member>
         <member name="T:PixelEngine.Examples.Matrix">
             <summary> Example that lets you see the code, circa 1999. </summary>
         </member>
@@ -2649,8 +2654,26 @@
         <member name="F:PixelEngine.Utilities.Vector2.y">
             <summary> Vector component  </summary>
         </member>
+        <member name="P:PixelEngine.Utilities.Vector2.r">
+            <summary> RGBA Component </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2.g">
+            <summary> RGBA Component </summary>
+        </member>
         <member name="M:PixelEngine.Utilities.Vector2.#ctor(System.Single,System.Single)">
             <summary> Create a <see cref="T:PixelEngine.Utilities.Vector2"/> with the given components  </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2.xx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2.xy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2.yx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2.yy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
         </member>
         <member name="P:PixelEngine.Utilities.Vector2.magnitude">
             <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> length by distance formula (Sqrt(x*x + y*y)) </summary>
@@ -2836,6 +2859,18 @@
         <member name="M:PixelEngine.Utilities.Vector2Int.ToString">
             <inheritdoc />
         </member>
+        <member name="P:PixelEngine.Utilities.Vector2Int.xx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2Int.xy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2Int.yx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector2Int.yy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2Int"/> Swizzle </summary>
+        </member>
         <member name="P:PixelEngine.Utilities.Vector2Int.magnitude">
             <summary> <see cref="T:PixelEngine.Utilities.Vector2Int"/> length by distance formula (Sqrt(x*x + y*y)) </summary>
         </member>
@@ -2953,6 +2988,15 @@
         <member name="F:PixelEngine.Utilities.Vector3.z">
             <summary> Vector component </summary>
         </member>
+        <member name="P:PixelEngine.Utilities.Vector3.r">
+            <summary> RGBA Component </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.g">
+            <summary> RGBA Component </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.b">
+            <summary> RGBA Component </summary>
+        </member>
         <member name="M:PixelEngine.Utilities.Vector3.#ctor(System.Single,System.Single,System.Single)">
             <summary> Create a <see cref="T:PixelEngine.Utilities.Vector3"/> with the given components </summary>
         </member>
@@ -2973,6 +3017,114 @@
         </member>
         <member name="M:PixelEngine.Utilities.Vector3.ToString">
             <inheritdoc />
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.xzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.yzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3.zzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
         </member>
         <member name="P:PixelEngine.Utilities.Vector3.normalized">
             <summary> Get a <see cref="T:PixelEngine.Utilities.Vector3"/> in the same direction as this one, but with a length of one. </summary>
@@ -3139,6 +3291,114 @@
         <member name="M:PixelEngine.Utilities.Vector3Int.ToString">
             <inheritdoc />
         </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.xzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.yzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector3Int.zzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> Swizzle </summary>
+        </member>
         <member name="P:PixelEngine.Utilities.Vector3Int.magnitude">
             <summary> <see cref="T:PixelEngine.Utilities.Vector3Int"/> length by distance formula </summary>
         </member>
@@ -3241,6 +3501,18 @@
         <member name="F:PixelEngine.Utilities.Vector4.w">
             <summary> Vector component </summary>
         </member>
+        <member name="P:PixelEngine.Utilities.Vector4.r">
+            <summary> RGBA Component </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.g">
+            <summary> RGBA Component </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.b">
+            <summary> RGBA Component </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.a">
+            <summary> RGBA Component </summary>
+        </member>
         <member name="M:PixelEngine.Utilities.Vector4.#ctor(System.Single,System.Single,System.Single,System.Single)">
             <summary> Create a <see cref="T:PixelEngine.Utilities.Vector4"/> with the given components </summary>
         </member>
@@ -3258,6 +3530,2022 @@
         </member>
         <member name="M:PixelEngine.Utilities.Vector4.ToString">
             <inheritdoc />
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xywx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xywy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xywz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yywx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yywy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yywz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zywx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zywy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zywz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wywx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wywy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wywz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rraa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rggr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rggg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rggb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rarr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rarg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rarb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rara">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ragr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ragg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ragb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rabr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rabg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rabb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.graa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gggr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gggg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gggb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.garr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.garg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.garb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gara">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gagr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gagg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gagb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gabr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gabg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gabb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.braa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bggr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bggg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bggb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.barr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.barg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.barb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bara">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bagr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bagg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bagb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.babr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.babg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.babb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.argr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.argg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.argb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.araa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aggr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aggg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aggb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aarr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aarg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aarb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aara">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aagr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aagg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aagb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aabr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aabg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aabb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector4"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ywz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wxw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wyw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wzw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wwz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.www">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> Swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rrb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.raa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.grb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ggb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.brb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bgb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bbb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.baa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.arb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ara">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.agb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.abb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aaa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector3"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.xw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.yw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.zw">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wx">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wy">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.wz">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ww">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.rb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ra">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gr">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.gb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ga">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.br">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bg">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.bb">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ba">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ar">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ag">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.ab">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
+        </member>
+        <member name="P:PixelEngine.Utilities.Vector4.aa">
+            <summary> <see cref="T:PixelEngine.Utilities.Vector2"/> swizzle </summary>
         </member>
         <member name="P:PixelEngine.Utilities.Vector4.normalized">
             <summary> Get a <see cref="T:PixelEngine.Utilities.Vector4"/> in the same direction, with a length of 1. </summary>
@@ -4945,9 +7233,27 @@
         <member name="P:PixelEngine.Randoms.Seed">
             <summary> Change the random seed. </summary>
         </member>
+        <member name="P:PixelEngine.Randoms.value">
+            <summary> Quick access to an evenly distributed random float value in range [0, 1) </summary>
+        </member>
+        <member name="P:PixelEngine.Randoms.normal">
+            <summary> Quick access to normally distributed random float value in range [0, 1) </summary>
+        </member>
         <member name="M:PixelEngine.Randoms.RandomByte">
             <summary> Get a single random value between [0, 255] </summary>
             <returns> Single number between 0 and 255 </returns>
+        </member>
+        <member name="M:PixelEngine.Randoms.Range(System.Single,System.Single)">
+            <summary> Generate a random number inside the given range </summary>
+            <param name="min"> Minimum value (inclusive) </param>
+            <param name="max"> Maximum value (exclusive) </param>
+            <returns> Random float between [<paramref name="min"/>, <paramref name="max"/>) </returns>
+        </member>
+        <member name="M:PixelEngine.Randoms.Range(System.Int32,System.Int32)">
+            <summary> Generate a random number inside the given range </summary>
+            <param name="min"> Minimum value (inclusive) </param>
+            <param name="max"> Maximum value (exclusive) </param>
+            <returns> Random float between [<paramref name="min"/>, <paramref name="max"/>) </returns>
         </member>
         <member name="M:PixelEngine.Randoms.RandomBytes(System.Int32)">
             <summary> Get some number of random byte values </summary>
