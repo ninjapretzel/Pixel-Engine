@@ -77,7 +77,7 @@ namespace PixelEngine.Examples {
 			root["Magic"]["Black"]["Bio3"].SetId(blackMag++);
 			root["Magic"]["Black"]["Demi"].SetId(blackMag++);
 			root["Magic"]["Black"]["Demi2"].SetId(blackMag++);
-			root["Magic"]["Black"]["Demi23"].SetId(blackMag++);
+			root["Magic"]["Black"]["Demi3"].SetId(blackMag++);
 			root["Magic"]["Black"]["Drain"].SetId(blackMag++);
 			root["Magic"]["Black"]["Osmose"].SetId(blackMag++);
 			root["Magic"]["Black"]["Sleep"].SetId(blackMag++);
